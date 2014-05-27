@@ -71,7 +71,7 @@
 #   Directory in which redmine web files will be installed. Default: '/var/www/html/redmine'
 #
 class redmine (
-  $version              = '2.2.3',
+  $version              = '2.5.1',
   $download_url         = '',
   $database_server      = 'localhost',
   $database_user        = 'redmine',

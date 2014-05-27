@@ -23,7 +23,7 @@ class redmine::rake {
 
   # Seed DB data
   exec { 'seed_db':
-    command => '/usr/bin/rake redmine:load_default_data && /bin/touch .seed',
+    command => '/usr/bin/bundle exec /usr/bin/rake redmine:load_default_data && /bin/touch .seed',
     creates => "${redmine::webroot}/.seed",
     notify  => Class['apache::service'],
     require => Exec['rails_migrations']

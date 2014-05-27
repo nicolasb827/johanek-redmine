@@ -5,6 +5,7 @@ class redmine::params  {
     '2.2.3' => 'http://rubyforge.org/frs/download.php/76771/redmine-2.2.3.tar.gz',
     '2.2.2' => 'http://rubyforge.org/frs/download.php/76722/redmine-2.2.2.tar.gz',
     '2.2.1' => 'http://rubyforge.org/frs/download.php/76677/redmine-2.2.1.tar.gz',
+    '2.5.1' => 'http://www.redmine.org/releases/redmine-2.5.1.tar.gz',
     default => $redmine::download_url
   }
 
