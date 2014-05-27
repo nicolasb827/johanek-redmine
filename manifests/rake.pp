@@ -10,13 +10,13 @@ class redmine::rake {
 
   # Create session store
   exec { 'session_store':
-    command => '/usr/bin/rake generate_session_store && /bin/touch .session_store',
+    command => '/usr/bin/bundle exec /usr/bin/rake generate_session_store && /bin/touch .session_store',
     creates => "${redmine::webroot}/.session_store"
   }
 
   # Perform rails migrations
   exec { 'rails_migrations':
-    command => '/usr/bin/rake db:migrate && /bin/touch .migrate',
+    command => '/usr/bin/bundle exec /usr/bin/rake db:migrate && /bin/touch .migrate',
     creates => "${redmine::webroot}/.migrate",
     notify  => Class['apache::service']
   }
